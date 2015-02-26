@@ -1,0 +1,29 @@
+// brand colors (http://name-of-color.com/)
+$black: #000;
+$white: #fff;
+$mountain-mist: #999;
+$ironside-gray: #666;
+$usc-cardinal: #990000;
+$tapa: #777777;
+$concrete: #f2f2f2;
+$mercury: #e4e4e4;
+$mine-shaft:#333;
+
+// base variables
+$base-text-color: $ironside-gray;
+$base-background-color: $white;
+$base-link-color: $ironside-gray;
+$base-form-text-color: $black;
+$base-form-placeholder-color: $mountain-mist;
+$base-input-border-color: $mountain-mist;
+
+$base-font-size: 20px;
+$base-line-height: 1.8;
+$base-font-family: 'ocraregular', 'Arial', 'Helvetica', sans-serif;
+$base-text-interval: ($base-font-size * $base-line-height);
+
+$base-min-width: 320px;
+$base-max-width: 1170px;
+
+// @font-face-serif: 
+// @font-face-sans-serif: 

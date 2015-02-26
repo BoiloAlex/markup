@@ -1,0 +1,30 @@
+// brand colors (http://name-of-color.com/)
+$black:#000;
+$white: #fff;
+$mountain-mist: #999;
+$ironside-gray: #666;
+$electric-crimson: #ff003c;
+$gray: #bcbec0;
+$science-blue: #0066d6;
+$cape-cod: #424141;
+$dove-gray: #717171;
+$dark-gray: #a7a9ac;
+$quartz: #4d4c4c;
+// base variables
+$base-text-color: $black;
+$base-background-color: $white;
+$base-link-color: $ironside-gray;
+$base-link-hover-color: $electric-crimson;
+$base-form-text-color: $black;
+$base-form-placeholder-color: $mountain-mist;
+$base-input-border-color: $mountain-mist;
+//
+$base-font-size: 14px;
+$base-line-height: 22/14;
+$base-font-family: 'Arial', 'Helvetica', sans-serif;
+$base-text-interval: ($base-font-size * $base-line-height);
+//
+$base-min-width: 320px;
+$base-max-width: 960px;
+$tmp-name-width: 800px;
+// @font-face-serif:// @font-face-sans-serif:

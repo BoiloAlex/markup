@@ -1,0 +1,444 @@
+
+// Show active breakpoint in top right corner of viewport
+// $mq-show-breakpoints: (mobile, mobileLandscape, tablet, desktop, widescreen, tvscreen);
+
+@import "base/markup-variables";
+@import "base/markup-mixins";
+@import "base/base-reset";
+//@import "mq";
+
+.holder{
+	width: $base-min-width;
+	margin: 0 auto;
+	padding: 0 10px;
+	@extend %clearfix;
+
+
+}
+.top-bar{
+	background: $dune url('../images/bg-top-bar.png');
+	font-size: 11px;
+	line-height: 35px;
+	overflow: hidden;
+	border-bottom: 1px solid $devis-gray;
+	a{
+		color:$spring-wood;
+	}
+	.welcome{
+		float: left;
+		width:50%;
+	}
+	.register{
+		float: right;
+		width:50%;
+		text-align: right;
+	}
+}
+#header{
+	border-top: 1px solid $spring-wood;
+	background: $giansboro url('../images/bg-header.png');
+	font-weight: bold;
+	box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.42);
+}
+.logo{
+	margin: 27px 15px 19px 0;
+	float: left;
+}
+.slogan{
+	padding-left: 13px;
+	margin-top: 33px;
+	border-left: 1px solid $mountian-mist;//18px
+	font-style: italic;
+	font-family: $slogan-font-family;
+	float: left;
+	font-size:10px;
+	display:inline-block;		
+}
+#nav{
+
+	>ul{
+		text-transform: uppercase;
+		padding:0;
+		margin:0;
+		list-style:none;
+		font-weight: bold;
+		display: inline-block;
+		float: right;
+		position: relative;
+		margin:-9px 0 0 0;
+		@extend %clearfix;
+		@extend %listreset;
+		>li{
+			padding-bottom: 9px;
+			float:left;
+			@extend %clearfix;
+			+li>a:before{//main boolit
+				content:'';
+				height:4px;
+				width:4px;
+				border-radius: 50%;
+				position: absolute;
+				margin-top: 6px;
+				margin-left: -26px;
+				background-color: $ruddy-braun ;
+			}
+			>a{
+				float: left;
+				padding:43px 24px 17px 21px;
+				color:$dune;
+				display: inline-block;
+			}
+			&:hover{
+				position:relative;
+				>a:before{//hide bool
+					display:none;
+				}
+				>a{
+					background-color: $ruddy-braun;
+					color:$spring-wood;
+					text-decoration:none;
+					box-shadow: 2px 3px 4px 0px rgba(0, 0, 0, 0.25), 0px 1px 0px 0px rgba(0, 0, 0, 0.1) inset;
+					&:after{
+						content:'';
+						width: 0px;
+						height: 0px;
+						position: absolute;
+						top:0;
+						right:-8px;
+						border-style: solid;
+						border-width: 8px 0 0 8px;
+						border-color: transparent transparent transparent #000000;
+					}
+				}
+				ul{
+					display:block;
+				}
+			}
+		}
+		>.active {
+			position:relative;
+				>a{
+				background-color: $ruddy-braun;
+				color:$spring-wood;
+				text-decoration:none;
+				box-shadow: 2px 3px 4px 0px rgba(0, 0, 0, 0.25), 0px 1px 0px 0px rgba(0, 0, 0, 0.1) inset;
+				&:after{
+					content:'';
+					width: 0px;
+					height: 0px;
+					position: absolute;
+					top:0;
+					right:-8px;
+					border-style: solid;
+					border-width: 8px 0 0 8px;
+					border-color: transparent transparent transparent #000000;
+				}
+			}
+		}
+		ul{
+			position:absolute;
+			display: none;
+			left:12px;
+			top:100%;
+			width:160px;
+			background:$dune;
+			border-top:1px solid $ruddy-braun;
+			padding:0;
+			margin:0;
+			list-style:none;
+			box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.1);
+			&:before{
+				position: absolute;
+				content:'';
+				width: 0px;
+				height: 0px;
+				border-style: solid;
+				top:-5px;
+				left: 19px;
+				border-width: 0 5px 5px 5px;
+				border-color: transparent transparent $ruddy-braun transparent;
+			}
+			a{
+				color:$spring-wood;
+				padding:7px 5px 5px 16px;
+				display: block;
+				border-bottom: 1px solid $havy-metall;
+				&:hover{
+					border-top: 1px solid $bronse;
+					border-bottom: 1px solid $bronse;
+					margin-top: -1px;
+					text-decoration: none;
+					background-color: $ruddy-braun;
+				}
+			}
+			
+		}
+	
+	}
+}
+
+.page-title{
+	background: $white url('../images/bg-page-title.png');
+	border-top: 1px solid $tundora;
+	box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.09);
+	h1{
+		float: left;
+		display: inline-block;
+		font-size: 24px;
+		padding-top: 37px;
+		padding-bottom: 7px;
+		text-transform: uppercase;
+		color:$spring-wood;
+	}
+}
+.breadcrumbs{
+		float: right;
+		ul{
+			padding-top: 40px;
+			@extend %listreset;
+		}
+		li{
+			float: left;
+			margin-left: 7px;
+			a{
+				color:$spring-wood;
+				&:after{
+					content:'>';
+					margin-left: 7px;
+					color:$ruddy-braun;
+					font-family: monospace;
+				}
+				&:hover{
+					text-decoration: none;
+				}
+			}
+		}
+
+	}
+#main{
+	background-color: $base-background-color;
+	color:$devis-gray;
+
+	h1{
+		font-family: $base-font-family;
+		text-transform: uppercase;
+		font-size: 22px;
+		color:$devis-gray;
+		margin: 0 0 18px;
+		text-shadow: 0px 1px 0px rgba(255, 255, 255, 1);
+	}
+	p{
+		margin-bottom: 5px;
+	}
+	.colomn{
+		width:460px;
+		padding-top: 46px;
+		margin-bottom: 53px;
+		float: left;
+		+.colomn{
+			margin-left: 20px;
+		}
+	}
+}
+.map{
+	margin-bottom: 30px;
+	.frame{
+		padding:9px;
+		border:1px solid $white;
+		box-shadow: 1px 1px 24px 0px rgba(0, 0, 0, 0.09) inset;
+		box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.07);
+		border-radius: 2px;
+	}
+	img{
+		display: block;
+	}
+}
+.info{
+	//line-height: 1.2;
+	dl{
+	overflow: hidden;
+	padding: 6px 0 0 0;
+	}
+	dd{
+		overflow:hidden;
+		margin:0 0 10px;
+		margin-bottom: 0;
+	}
+	dt{
+		float:left;
+		padding:0 10px 0 0;
+	}
+}
+.contact-form{
+	background: $base-form-bg-color;
+	padding: 17px 20px 1px 19px;
+	span{
+		color:$mountian-mist;
+	}
+	input, textarea{
+		width:420px;
+		display: block;
+		margin-bottom: 24px;
+		font-size: 17px;
+	}
+	label{
+		display: block;
+		font-weight: bold;
+
+	}
+	textarea{
+		padding:8px;
+		margin-bottom: 21px;
+	}
+	 input[type="submit"]{
+	 	font-size: 14px;
+		text-transform: uppercase;
+		background: $ruddy-braun url("../images/bg-submit.png") ;
+		border-radius: 3px;
+		color:$spring-wood;
+		width:auto;
+		border: none;
+		box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.18);
+		padding: 7px 16px; 
+		font-family: $base-font-family;
+		margin-bottom: 20px;
+
+	}
+}
+.bottom-section{
+	background: $dune url("../images/bg-footer-widget.png");
+	border-top: 1px solid $dune;
+	padding-top: 55px;
+	.holder{
+		padding: 0;
+	}
+	.col{
+		width:220px;
+		float: left;
+		margin:0 10px 52px;
+	}
+	h2{
+		border-bottom: 1px solid $white010;
+		padding-bottom: 6px;
+		margin-bottom: 18px;
+		color:$white;
+		font-family: $base-font-family;
+		text-transform: uppercase;
+	}
+	
+}
+.social{
+	margin-bottom: 42px;
+	ul{
+		@extend %clearfix;
+		@extend %listreset;
+		li{
+			margin-right: 3px;
+			float: left;
+			i{
+				width:32px;
+				height:32px;
+				margin: 0px 2px 0px 0px;
+				padding: 8px 0px 0 9px;
+				display: inline-block;
+				font-size: 17px;
+				background: $white010;
+				border-radius: 50%;
+				&:hover{
+					color:$spring-wood;
+				}
+			}
+			a{
+				color:$mountian-mist;
+			}
+		}
+	}
+}
+
+.twitter i:hover{
+	background: $twitter-color;
+}
+.facebook i:hover{
+	background: $facebook;
+}
+.google-plus i:hover{
+	background:$google-plus;
+}
+.dribbble i:hover{
+	background:$dribbble;
+}
+.rss i:hover{
+	background: $rss;
+}
+.phone{
+	span{
+		font-size: 24px;
+		margin-top: -7px;
+		color:$ruddy-braun;
+		display: block;
+	}
+}
+.twitter-upd{
+	ul{
+		@extend %listreset;
+	}
+	time{
+		display: block;
+		color:$white;
+		font-size: 10px;
+	}
+	li{
+		position: relative;
+		margin-left: 19px;
+		margin-bottom: 18px;
+		>i{
+			position: absolute;
+			color:$white;
+			left: -18px;
+			margin-top: 3px;
+		}
+	}
+}
+.blog{
+	ul{
+		@extend %listreset;
+	}
+	li{
+		position: relative;
+		margin-left: 19px;
+		margin-bottom: 18px;
+		color:$ruddy-braun;
+		>i{
+			position: absolute;
+			color:$white;
+			left: -18px;
+			margin-top: 3px;
+		}
+	}
+}
+.flickr{
+	ul{
+		margin-right: -15px;
+		margin-top: -2px;
+		@extend %listreset;
+	}
+	li a{
+		width:65px;
+		float: left;
+		height:65px;
+		border:3px solid $mountian-mist;
+		margin-right: 12px;
+		margin-bottom: 12px;
+		background: $dune ;
+		img{
+			vertical-align: top;
+		}
+	}
+}
+#footer{
+	padding: 21px 0 20px 0 ;
+	background: $dune url("../images/bg-footer.png");
+	@extend %clearfix;
+	border-top: 1px solid  $dune;
+	font-size: 11px;
+}

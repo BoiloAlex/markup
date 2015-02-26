@@ -1,0 +1,129 @@
+
+/* hide original element */
+.jcf-hidden {
+	display: block !important;
+	position: absolute !important;
+	left: -9999px !important; /* change to right: -9999px on RTL sites */
+}
+
+/* custom checkbox styles */
+.chk-area {
+	border:1px solid $light-gray;
+	border-radius: 4px;
+	margin: 0 10px 0 0;
+	float: left;
+	width: 20px;
+	height: 20px;
+	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1) inset;
+}
+.chk-checked :after {
+		content:'\f00c';
+		position: absolute;
+		margin: 3px 0px 0 2px;
+		color: $mako;
+		font: normal normal normal 16px/1 FontAwesome;
+	
+}
+.chk-focus {
+	border-color: $mako;
+}
+.chk-disabled {
+	//background: #eee;
+}
+.jcf-label-disabled {
+	color: #ccc;
+}
+/**/
+/* custom select styles */
+.select-area {
+	clear:both;
+	border: 1px solid $base-input-border-color;
+	padding: 6px 0 0 0;
+	border-radius: 4px;
+	height: 44px;
+	width:120px;
+	line-height:30px;
+	box-shadow: 0px 1px 2px 0px rgba(255, 255, 255, 0.6), 0px 1px 3px 0px rgba(0, 0, 0, 0.1) inset;
+	position: relative;
+	overflow: hidden;
+	cursor: default;
+	float: left;
+	color: $silver-chalice;
+}
+.select-focus {
+	//border-color: darken($base-input-border-color, 30%); 
+	color: $mako;
+
+}
+.select-area .center {
+	white-space: nowrap;
+	margin:0 33px 0 9px;
+	display:block;
+	@include arrow-lazy( down, 5px, $light-gray,/*  $al-center:  */150%, /* $al-margin:  */-15px, /* $al-pseudo: */ after);
+
+}
+.select-disabled {
+	//background: #eee;
+}
+.select-area .select-opener {
+	position: absolute;
+	height: 26px;
+	width: 30px;
+	right: 0;
+	top: 0;
+	//border:1px solid #000;
+
+}
+.select-options {
+	position: absolute;
+	overflow: hidden;
+	background: $white;
+	z-index: 2000;
+	color:$silver-chalice;
+	border: 1px solid $light-gray;
+	box-shadow: 0px 1px 2px 0px rgba(255, 255, 255, 0.6), 0px 1px 3px 0px rgba(0, 0, 0, 0.1) inset;
+	border-radius: 4px;
+
+}
+.select-options .drop-holder {
+	overflow: hidden;
+	height: 1%;
+	border-radius: 4px;
+
+}
+.select-options ul {
+	list-style: none;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+}
+.select-options ul li {
+	width: 100%;
+	float: left;
+}
+.select-options ul a {
+	text-decoration: none;
+	padding: 5px 10px;
+	display: block;
+	cursor: default;
+	color:$silver-chalice;
+	height: 1%;
+}
+.select-options .item-selected a {
+	text-decoration: none;
+	background: $silver-chalice;
+	color: $white;
+}
+
+
+/* select options optgroup example styles */
+.select-options .optgroup {
+	clear: both;
+}
+.select-options .optgroup strong {
+	display: block;
+	padding: 5px;
+}
+.select-options .optgroup ul a {
+	padding-left: 30px;
+}
