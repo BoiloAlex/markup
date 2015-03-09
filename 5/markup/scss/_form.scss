@@ -95,12 +95,16 @@
 		overflow: hidden;
 		cursor: default;
 		height: 31px;
-		line-height: 2.8;
+		line-height: 31px;
 		float: left;
 		color:$light-stay-gray;
 		margin-bottom: 7px;
 		margin-right: 10px;
 
+	}
+		@include breakpoint($tablet) { 
+		.select-w100{width:93% !important;}
+		.select-w50{width:44% !important;}
 	}
 	.select-focus {
 		border-color: $light-gray;
@@ -158,27 +162,6 @@
 		color: #fff;
 	}
 
-	.chk-area {
-	   //margin-right:10px;
-	    //background: url(../images/bg-checkbox.png );
-	    border:1px solid #959696;
-		margin-top: 5px;
-		margin-right: 5px;
-		float: left;
-
-		width: 12px;
-		height: 12px;
-	}
-	.chk-checked {
-		&:before{
-			content:'\f00c';
-			position: absolute;
-			margin-top: -5px;
-			color: #000;
-			font: normal normal normal 16px/1 FontAwesome;
-
-		}
-	    //background: url(../images/bg-checkbox.png) 0 100%;
-	}
+	
 
 }
