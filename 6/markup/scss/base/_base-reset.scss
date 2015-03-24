@@ -29,7 +29,8 @@ a {
 	text-decoration: none;
 	color: $base-link-color;
 	&:hover {
-		text-decoration: underline;
+		text-decoration: none;
+		color:$base-link-hover-color;
 	}
 }
 
@@ -73,6 +74,7 @@ input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"],
+button,
 textarea {
 	margin: 0;
 	padding: 4px 7px;

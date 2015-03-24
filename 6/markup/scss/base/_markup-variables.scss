@@ -4,18 +4,22 @@ $athens-gray: #ecf0f1;
 $cadet: #4f6274;
 $niagara: #00a988;
 $white:#fff;
-$pickled-bluewood:#34495e;
+$pickled-bluewood:#34495e;//!! lighter
+$manatee: #959ea7;
+$carmine-pink:#e45038;
+$pickled-bluewood2:#2c3e50;
+$french-rose: #ea4c89;
 
-
-
-$base-text-color: #000;
-$base-background-color: #fff;
-$base-link-color: #666;
+$base-text-color: $manatee;
+$base-background-color: $athens-gray;
+$base-link-color: $manatee;
+$base-link-hover-color:$carmine-pink;
 $base-form-text-color: #000;
 $base-form-placeholder-color: #999;
 $base-input-border-color: #999;
 
-$base-font-size: 1.4em;
+$base-font-size: 1.4em;//14px
+$base-font-size-px:14px;
 $base-line-height: 1.429;
 $base-font-family: Arial, Helvetica, sans-serif;
 
